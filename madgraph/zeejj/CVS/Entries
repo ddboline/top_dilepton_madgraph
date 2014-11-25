@@ -1,0 +1,85 @@
+/MGVersion.txt/1.1.1.1/Wed Nov  1 20:00:46 2006//Tv00-00-01
+/SUBDIRS/1.1.1.1/Wed Nov  1 20:00:46 2006//Tv00-00-01
+/coupl.inc/1.1.1.1/Wed Nov  1 20:00:46 2006//Tv00-00-01
+/done/1.1.1.1/Wed Nov  1 20:00:46 2006//Tv00-00-01
+/driver.f/1.1.1.1/Wed Nov  1 20:00:46 2006//Tv00-00-01
+/fort.28/1.1.1.1/Wed Nov  1 20:00:46 2006//Tv00-00-01
+/fort.71/1.1.1.1/Wed Nov  1 20:00:46 2006//Tv00-00-01
+/genps.f/1.1.1.1/Wed Nov  1 20:00:46 2006//Tv00-00-01
+/genps.inc/1.1.1.1/Wed Nov  1 20:00:46 2006//Tv00-00-01
+/input.dat/1.1.1.1/Wed Nov  1 20:00:46 2006//Tv00-00-01
+/interactions.dat/1.1.1.1/Wed Nov  1 20:00:46 2006//Tv00-00-01
+/makefile/1.1.1.1/Wed Nov  1 20:00:46 2006//Tv00-00-01
+/myamp.f/1.1.1.1/Wed Nov  1 20:00:46 2006//Tv00-00-01
+/nexternal.inc/1.1.1.1/Wed Nov  1 20:00:46 2006//Tv00-00-01
+/particles.dat/1.1.1.1/Wed Nov  1 20:00:46 2006//Tv00-00-01
+/processes.txt/1.1.1.1/Wed Nov  1 20:00:46 2006//Tv00-00-01
+/randinit/1.1.1.1/Wed Nov  1 20:00:46 2006//Tv00-00-01
+/results.dat/1.1.1.1/Wed Nov  1 20:00:46 2006//Tv00-00-01
+/status/1.1.1.1/Wed Nov  1 20:00:46 2006//Tv00-00-01
+/subproc.mg/1.1.1.1/Wed Nov  1 20:00:46 2006//Tv00-00-01
+/subproc.txt/1.1.1.1/Wed Nov  1 20:00:46 2006//Tv00-00-01
+/symmetry.f/1.1.1.1/Wed Nov  1 20:00:46 2006//Tv00-00-01
+/unwgt.f/1.1.1.1/Wed Nov  1 20:00:46 2006//Tv00-00-01
+/xinput.mg/1.1.1.1/Wed Nov  1 20:00:46 2006//Tv00-00-01
+D/Pcd_e+e-dc////
+D/Pcdx_e+e-dxc////
+D/Pcu_e+e-uc////
+D/Pcux_e+e-uxc////
+D/Pcxd_e+e-dcx////
+D/Pcxdx_e+e-dxcx////
+D/Pcxu_e+e-ucx////
+D/Pcxux_e+e-uxcx////
+D/Pdc_e+e-dc////
+D/Pdcx_e+e-dcx////
+D/Pdd_e+e-dd////
+D/Pddx_e+e-ddx////
+D/Pddx_e+e-gg////
+D/Pddx_e+e-ssx////
+D/Pddx_e+e-uux////
+D/Pdg_e+e-dg////
+D/Pds_e+e-ds////
+D/Pdsx_e+e-dsx////
+D/Pdu_e+e-ud////
+D/Pdux_e+e-uxd////
+D/Pdxc_e+e-dxc////
+D/Pdxcx_e+e-dxcx////
+D/Pdxd_e+e-ddx////
+D/Pdxd_e+e-gg////
+D/Pdxd_e+e-ssx////
+D/Pdxd_e+e-uux////
+D/Pdxdx_e+e-dxdx////
+D/Pdxg_e+e-dxg////
+D/Pdxs_e+e-dxs////
+D/Pdxsx_e+e-dxsx////
+D/Pdxu_e+e-udx////
+D/Pdxux_e+e-uxdx////
+D/Pgd_e+e-dg////
+D/Pgdx_e+e-dxg////
+D/Pgg_e+e-ddx////
+D/Pgg_e+e-uux////
+D/Pgu_e+e-ug////
+D/Pgux_e+e-uxg////
+D/Psd_e+e-ds////
+D/Psxd_e+e-dsx////
+D/Psxdx_e+e-dxsx////
+D/Puc_e+e-uc////
+D/Pucx_e+e-ucx////
+D/Pud_e+e-ud////
+D/Pudx_e+e-udx////
+D/Pug_e+e-ug////
+D/Puu_e+e-uu////
+D/Puux_e+e-ccx////
+D/Puux_e+e-ddx////
+D/Puux_e+e-gg////
+D/Puux_e+e-uux////
+D/Puxc_e+e-uxc////
+D/Puxcx_e+e-uxcx////
+D/Puxd_e+e-uxd////
+D/Puxdx_e+e-uxdx////
+D/Puxg_e+e-uxg////
+D/Puxu_e+e-ccx////
+D/Puxu_e+e-ddx////
+D/Puxu_e+e-gg////
+D/Puxu_e+e-uux////
+D/Puxux_e+e-uxux////

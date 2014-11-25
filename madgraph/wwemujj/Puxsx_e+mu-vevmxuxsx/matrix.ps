@@ -1,0 +1,1150 @@
+%!PS-Adobe-2.0
+%%BoundingBox: -20 -20      450     650
+%%DocumentFonts: Helvetica
+%%Pages:        2
+%!MadGraph
+%
+% Feynman Diagrams drawn by MadGraph
+%
+% Using FEYNMAN DRAW
+% A program by David J. Summers to draw
+% Feynman diagrams. (c) 1992
+% Version 2.7 (c) 1993
+%
+% Comments and questions to 
+%  D.J.Summers@uk.ac.durham
+%
+
+/Fnopoints 10 def 
+/Fr 2.5 def 
+/pi 3.14159265359 def
+
+/Frmod {dup 360 div floor 360 mul sub} def
+/Fsign {0 ge {1} {-1} ifelse} def
+
+/Fbasis
+{/Fby exch def /Fbx exch def /Fdist Fbx Fbx
+mul Fby Fby mul add sqrt def /Fxl Fbx Fdist
+div Fr mul def /Fyl Fby Fdist div Fr mul def
+/Fxt Fby Fdist div Fr mul def /Fyt Fbx neg
+Fdist div Fr mul def } def
+
+/Fstraight 
+{/Fshape exch def /Ftype exch def /Fy2 exch
+def /Fx2 exch def /Fy1 exch def /Fx1 exch def
+Fx2 Fx1 sub Fy2 Fy1 sub Fbasis /Fttype 1
+Ftype 2 mod 2 mul abs sub def Ftype 0 ge
+{/Fddist Fdist Fr div def /Fn Fddist round
+def Ftype 1 gt {/Fn Fn Fddist Fn sub Fsign
+add def} if} {/Fn Fdist Fr div 2 div round 2
+mul def} ifelse Fx1 Fy1 moveto 0 1 Fnopoints
+Fn mul {/Fi exch def Fshape lineto } for
+stroke } def
+
+/Floop
+{/Fshape exch def /Fe exch def /Ftype exch
+def /Fy2 exch def /Fx2 exch def /Fy1 exch def
+/Fx1 exch def /Flam 1 Fe Fe mul sub 2 div Fe
+div def /Fxc Fx1 Fx2 Flam Fy2 Fy1 sub mul add
+add 2 div def /Fyc Fy1 Fy2 Flam Fx1 Fx2 sub
+mul add add 2 div def /Frr Fx1 Fxc sub dup
+mul Fy1 Fyc sub dup mul add sqrt def /Fth1
+Fy1 Fyc sub Fx1 Fxc sub atan def /Fth2 Fy2
+Fyc sub Fx2 Fxc sub atan def Fe 0 lt Fth2
+Fth1 lt and {/Fth1 Fth1 360 sub def} if Fe 0
+gt Fth2 Fth1 gt and {/Fth2 Fth2 360 sub def}
+if /Fdth Fth2 Fth1 sub Fsign def /Fttype 1
+Ftype 2 mod abs 2 mul sub def Ftype 0 ge
+{/Fddist Fth2 Fth1 sub abs 180 div pi mul Frr
+mul Fr div def /Fn Fddist round def Ftype 1
+gt {/Fn Fn Fddist Fn sub Fsign add def} if}
+{/Fn Fth2 Fth1 sub abs 180 div pi mul Frr mul
+Fr div 2 div round 2 mul def} ifelse Fx1 Fy1
+moveto 0 1 Fnopoints Fn mul {/Fi exch def
+/Fth Fth1 Fth2 Fth1 sub Fi mul Fnopoints div
+Fn div add Frmod def Fth sin neg Fdth mul Fth
+cos Fdth mul Fbasis Fshape lineto } for
+stroke } def
+
+/Farrow
+{ moveto Fxt Fxl sub Fyt Fyl sub
+rlineto Fxl 2 mul Fxt sub Fyl 2 mul Fyt sub
+rlineto Fxl 2 mul Fxt add neg Fyl 2 mul Fyt
+add neg rlineto fill } def
+
+/Fphoton
+{{ Fx1 Fx2 Fx1 sub Fi mul Fnopoints div Fn
+div Fxt Fi 180 mul Fnopoints div Frmod sin
+mul Fttype mul 2 div add add Fy1 Fy2 Fy1 sub
+Fi mul Fnopoints div Fn div Fyt Fi 180 mul
+Fnopoints div Frmod sin mul Fttype mul 2 div
+add add } Fstraight } def
+
+
+/Fphotond
+{{ Fx1 Fx2 Fx1 sub Fi mul Fnopoints div Fn
+div Fxt Fi 180 mul Fnopoints div Frmod sin
+mul Fttype mul 2 div add add Fy1 Fy2 Fy1 sub
+Fi mul Fnopoints div Fn div Fyt Fi 180 mul
+Fnopoints div Frmod sin mul Fttype mul 2 div
+add add } Fstraight Fx1
+Fx2 add 2 div Fy1 Fy2 add 2 div Farrow} def
+
+/Fphotonl
+{exch dup 3 1 roll 0 ge {{ Fxc Fth cos Frr
+mul Fxt Fi 180 mul Fnopoints div Frmod sin
+mul Fttype mul 2 div add add Fyc Fth sin Frr
+mul Fyt Fi 180 mul Fnopoints div Frmod sin
+mul Fttype mul 2 div add add }} {{ Fxc Fth
+cos Frr mul Fxt 1 Fi 180 mul Fnopoints div
+Frmod cos sub mul Fttype mul 2 div add add
+Fyc Fth sin Frr mul Fyt 1 Fi 180 mul
+Fnopoints div Frmod cos sub mul Fttype mul 2
+div add add }} ifelse Floop } def
+
+/Fgluon
+{2 sub { Fx1 Fx2 Fx1 sub Fi mul Fnopoints div
+Fn div Fxt 1 Fi 180 mul Fnopoints div cos sub
+mul Fttype mul Fxl Fi 180 mul Fnopoints div
+sin mul add add add Fy1 Fy2 Fy1 sub Fi mul
+Fnopoints div Fn div Fyt 1 Fi 180 mul
+Fnopoints div cos sub mul Fttype mul Fyl Fi
+180 mul Fnopoints div sin mul add add add }
+Fstraight } def
+
+/Fgluonl
+{exch 2 sub exch { Fxc Fth cos Frr mul Fxt 1
+Fi 180 mul Fnopoints div cos sub mul Fttype
+mul Fxl Fi 180 mul Fnopoints div sin mul add
+add add Fyc Fth sin Frr mul Fyt 1 Fi 180 mul
+Fnopoints div cos sub mul Fttype mul Fyl Fi
+180 mul Fnopoints div sin mul add add add }
+Floop} def
+
+/Ffermion
+{/Fy2 exch def /Fx2 exch def /Fy1 exch def
+/Fx1 exch def newpath Fx2 Fx1 sub Fy2 Fy1 sub
+Fbasis Fx1 Fy1 moveto Fx2 Fy2 lineto stroke Fx1
+Fx2 add 2 div Fy1 Fy2 add 2 div Farrow } def
+
+/Fscalar
+{newpath moveto lineto stroke} def
+
+/Ffermionl
+{/Fe exch def /Fy2 exch def /Fx2 exch def
+/Fy1 exch def /Fx1 exch def newpath /Flam 1 Fe
+Fe mul sub 2 div Fe div def /Fxc Fx1 Fx2 Flam Fy2
+Fy1 sub mul add add 2 div def /Fyc Fy1 Fy2
+Flam Fx1 Fx2 sub mul add add 2 div def /Frr
+Fx1 Fxc sub dup mul Fy1 Fyc sub dup mul add
+sqrt def /Fth1 Fy1 Fyc sub Fx1 Fxc sub atan
+def /Fth2 Fy2 Fyc sub Fx2 Fxc sub atan def Fe
+0 lt Fth2 Fth1 lt and {/Fth1 Fth1 360 sub
+def} if Fe 0 gt Fth2 Fth1 gt and {/Fth2 Fth2
+360 sub def} if /Fthc Fth1 Fth2 add 2 div def
+Fxc Fyc Frr Fth1 Fth2 Fe 0 gt {arcn} {arc}
+ifelse stroke Fthc sin Fe 0 lt {neg} if Fthc
+cos Fe 0 gt {neg} if Fbasis Fxc Fthc cos Frr
+mul add Fyc Fthc sin Frr mul add Farrow } def
+
+/Fscalarl
+{/Fe exch def /Fy2 exch def /Fx2 exch def
+/Fy1 exch def /Fx1 exch def newpath /Flam 1 Fe
+Fe mul sub 2 div Fe div def /Fxc Fx1 Fx2 Flam Fy2
+Fy1 sub mul add add 2 div def /Fyc Fy1 Fy2
+Flam Fx1 Fx2 sub mul add add 2 div def /Frr
+Fx1 Fxc sub dup mul Fy1 Fyc sub dup mul add
+sqrt def /Fth1 Fy1 Fyc sub Fx1 Fxc sub atan
+def /Fth2 Fy2 Fyc sub Fx2 Fxc sub atan def Fe
+0 lt Fth2 Fth1 lt and {/Fth1 Fth1 360 sub
+def} if Fe 0 gt Fth2 Fth1 gt and {/Fth2 Fth2
+360 sub def} if /Fthc Fth1 Fth2 add 2 div def
+Fxc Fyc Frr Fth1 Fth2 Fe 0 gt {arcn} {arc}
+ifelse stroke } def
+
+/Fblob 
+{/Fshade exch def newpath Fr mul 0 360 arc gsave
+1 Fshade sub setgray fill grestore stroke} def
+
+/Fhiggs
+{/Fy2 exch def /Fx2 exch def /Fy1 exch def
+/Fx1 exch def gsave Fx1 Fx2 sub dup mul
+Fy1 Fy2 sub dup mul add sqrt dup Fr div
+2 div round 2 mul 1 add div /dashln exch def
+[dashln dashln] 0 setdash Fx1 Fy1 moveto
+Fx2 Fy2 lineto stroke grestore} def
+
+
+/Fhiggsd
+{/Fy2 exch def /Fx2 exch def /Fy1 exch def
+/Fx1 exch def gsave Fx1 Fx2 sub dup mul
+Fy1 Fy2 sub dup mul add sqrt dup Fr div
+2 div round 2 mul 1 add div /dashln exch def
+[dashln dashln] 0 setdash Fx1 Fy1 moveto
+Fx2 Fy2 lineto stroke grestore Fx1 Fx2 add 2 div
+Fy1 Fy2 add 2 div Farrow} def
+
+/Fhiggsl
+{/Fe exch def /Fy2 exch def /Fx2 exch def
+/Fy1 exch def /Fx1 exch def /Flam gsave 1 Fe
+Fe mul sub 2 div Fe div def /Fxc Fx1 Fx2 Flam
+Fy2 Fy1 sub mul add add 2 div def /Fyc Fy1
+Fy2 Flam Fx1 Fx2 sub mul add add 2 div def
+/Frr Fx1 Fxc sub dup mul Fy1 Fyc sub dup mul
+add sqrt def /Fth1 Fy1 Fyc sub Fx1 Fxc sub
+atan def /Fth2 Fy2 Fyc sub Fx2 Fxc sub atan
+def Fe 0 lt Fth2 Fth1 lt and {/Fth1 Fth1 360
+sub def} if Fe 0 gt Fth2 Fth1 gt and {/Fth2
+Fth2 360 sub def} if /Fthc Fth1 Fth2 add 2
+div def Fxc Fyc Frr Fth1 Fth2 Fe 0 gt {arcn}
+{arc} ifelse Fth2 Fth1 sub abs 180 div pi mul
+Frr mul dup Fr div 2 div round 2 mul 1 add
+div /dashln exch def [dashln dashln] 0
+setdash stroke grestore} def
+
+/Fghost
+{/Fy2 exch def /Fx2 exch def /Fy1 exch def
+/Fx1 exch def Fx2 Fx1 sub Fy2 Fy1 sub Fbasis
+/Fn Fx1 Fx2 sub dup mul Fy1 Fy2 sub dup mul
+add sqrt Fr div round def 0 1 Fn {/Fi exch
+def Fx2 Fx1 sub Fi Fn div mul Fx1 add Fy2 Fy1
+sub Fi Fn div mul Fy1 add Fr 10 div 0 360 arc
+fill} for Fx1 Fx2 add 2 div Fy1 Fy2 add 2 div
+Farrow } def
+
+/Fghostl
+{/Fe exch def /Fy2 exch def /Fx2 exch def
+/Fy1 exch def /Fx1 exch def /Flam 1 Fe Fe mul
+sub 2 div Fe div def /Fxc Fx1 Fx2 Flam Fy2
+Fy1 sub mul add add 2 div def /Fyc Fy1 Fy2
+Flam Fx1 Fx2 sub mul add add 2 div def /Frr
+Fx1 Fxc sub dup mul Fy1 Fyc sub dup mul add
+sqrt def /Fth1 Fy1 Fyc sub Fx1 Fxc sub atan
+def /Fth2 Fy2 Fyc sub Fx2 Fxc sub atan def Fe
+0 lt Fth2 Fth1 lt and {/Fth1 Fth1 360 sub
+def} if Fe 0 gt Fth2 Fth1 gt and {/Fth2 Fth2
+360 sub def} if /Fthc Fth1 Fth2 add 2 div def
+/Fn Fth2 Fth1 sub abs 180 div pi mul Frr mul
+Fr div round def 0 1 Fn {/Fi exch def Fth2
+Fth1 sub Fi Fn div mul Fth1 add dup cos Frr
+mul Fxc add exch sin Frr mul Fyc add Fr 10
+div 0 360 arc fill} for Fthc sin Fe 0 lt
+{neg} if Fthc cos Fe 0 gt {neg} if Fbasis Fxc
+Fthc cos Frr mul add Fyc Fthc sin Frr mul add
+Farrow } def
+
+/Fproton
+{/Fy2 exch def /Fx2 exch def /Fy1 exch def
+/Fx1 exch def Fx2 Fx1 sub Fy2 Fy1 sub Fbasis
+Fx1 Fxt 2 div add Fy1 Fyt 2 div add moveto
+Fx2 Fxt 2 div add Fy2 Fyt 2 div add lineto
+Fx1 Fxt 2 div sub Fy1 Fyt 2 div sub moveto
+Fx2 Fxt 2 div sub Fy2 Fyt 2 div sub lineto
+Fx1 Fx2 add 2 div Fxt Fxl sub add Fy1 Fy2 add
+2 div Fyt Fyl sub add moveto Fx1 Fx2 add Fxl
+add 2 div Fy1 Fy2 add Fyl add 2 div lineto
+Fx1 Fx2 add 2 div Fxt Fxl add sub Fy1 Fy2 add
+2 div Fyt Fyl add sub lineto stroke} def
+
+/Fmax {2 copy lt {exch} if pop} def
+/Fstart {gsave currentpoint
+translate 0 0 moveto 0 rm Fr 4 mul
+scalefont setfont} def
+/Fsubspt {gsave currentpoint Fcharheight 5 div
+sub translate 0.6 0.6 scale 0 0 moveto 0} def
+/Fsupspt {gsave currentpoint Fcharheight 0.6 mul
+add translate 0.6 0.6 scale 0 0 moveto 0} def
+/Feend {currentpoint pop Fmax 0.6 mul
+grestore currentpoint pop add Fmax} def
+/Fendd {pop grestore} def
+/Fshow {exch 0 moveto show currentpoint pop} def
+/Fcharheight
+{gsave (X) true charpath flattenpath pathbbox
+3 1 roll pop sub exch pop grestore} def
+
+/Foverline
+{exch 0 moveto gsave dup true charpath
+flattenpath pathbbox Fcharheight 10 div dup
+2 div setlinewidth add dup 4
+1 roll newpath moveto pop lineto stroke
+grestore show currentpoint pop} def
+
+/Funderline 
+{exch 0 moveto gsave dup true charpath
+flattenpath pathbbox pop exch Fcharheight
+10 div dup 2 div setlinewidth
+sub dup 3 1 roll newpath moveto lineto stroke
+grestore show currentpoint pop} def
+
+/rm /Times-Roman findfont def
+/it /Times-Italic findfont def
+/sy /Symbol findfont def
+
+/wedge 
+/{ /ystop exch def /xstop exch def /ystart exch def
+/xstart exch def /delx xstop xstart sub def /dely 
+ystop ystart sub def /dist delx dup mul dely dup 
+mul add sqrt def /halfdist dist 2 div def
+/angle dely delx atan def xstart ystart moveto 
+angle rotate 0 halfdist rlineto dist halfdist
+neg rlineto dist neg halfdist neg rlineto 
+0 halfdist rlineto }def
+
+/ch_photon
+{/ystop exch def /xstop exch def /ystart exch def
+/xstart exch def /xmid xstart xstop add 2 div def
+/ymid ystart ystop add 2 div def
+/dx xstop xstart sub def /dy ystop ystart sub def
+/length dx dup mul dy dup mul add sqrt def
+/xunit dx length div def /yunit dy length div def
+/x1 xmid xunit -4.8 mul add def
+/y1 ymid yunit -4.8 mul add def
+/x2 xmid xunit 4.8 mul add def
+/y2 ymid yunit 4.8 mul add def
+/y2 ymid yunit 4.8 mul add def
+xstart ystart x1 y1 1 Fphoton 
+x2 y2 xstop ystop 1 Fphoton
+/x1 xmid xunit -5.2 mul add def 
+/y1 ymid yunit -5.2 mul add def
+/x2 xmid xunit 5.2 mul add def 
+/y2 ymid yunit 5.2 mul add def
+gsave x1 y1 x2 y2 wedge fill grestore} def
+
+/ch_higgs 
+{ /ystop exch def /xstop exch def /ystart exch def
+/xstart exch def 
+/xmid xstart xstop add 2 div def
+/ymid ystart ystop add 2 div def
+/dx xstop xstart sub def /dy ystop ystart sub def
+/length dx dup mul dy dup mul add sqrt def
+/xunit dx length div def /yunit dy length div def
+/x1 xmid xunit -4.8 mul add def 
+/y1 ymid yunit -4.8 mul add def
+/x2 xmid xunit 4.8 mul add def 
+/y2 ymid yunit 4.8 mul add def
+xstart ystart x1 y1 Fhiggs 
+x2 y2 xstop ystop Fhiggs
+/x1 xmid xunit -5.2 mul add def
+/y1 ymid yunit -5.2 mul add def
+/x2 xmid xunit 5.2 mul add def
+/y2 ymid yunit 5.2 mul add def
+gsave x1 y1 x2 y2 wedge fill grestore} def
+% End of the header
+
+%%Page:       1       1
+%%PageBoundingBox:-20 -20 600 800
+%%PageFonts: Helvetica
+/Helvetica findfont 10 scalefont setfont
+ 240 770 moveto
+(Diagrams by MadGraph) show
+ 370 770 moveto
+( u~ s~ -> e+ mu- ve vm~ u~ s~  ) show
+  165.10289  717.178345  100.  737.  Ffermion
+  134.007767  727.872375  moveto
+(u    )   show
+  158.189301  639.623474  100.  612.  Ffermion
+  131.238892  617.294861  moveto
+(s    )   show
+  250.  637.  199.259262  629.335388  Ffermion
+  225.376434  624.223755  moveto
+(e    )   show
+  214.40329  691.921143  250.  712.  Ffermion
+  234.658127  693.605591  moveto
+(mu   )   show
+  199.259262  629.335388  250.  612.  Ffermion
+  226.246124  621.39917  moveto
+(ve   )   show
+  250.  687.  214.40329  691.921143  Ffermion
+  232.886368  690.413452  moveto
+(vm   )   show
+  250.  737.  165.10289  717.178345  Ffermion
+  208.688263  718.220093  moveto
+(u    )   show
+  250.  662.  203.23732  677.152039  Ffermion
+  228.159866  670.332581  moveto
+(s    )   show
+  175.509827  677.984619  158.189301  639.623474  Ffermion
+  171.406586  652.746521  moveto
+(c    )   show
+  199.259262  629.335388  158.189301  639.623474 0  Fphotond
+  179.939255  635.32959  moveto
+(W    )   show
+  203.23732  677.152039  214.40329  691.921143 0  Fphotond
+  212.808716  677.521179  moveto
+(W    )   show
+  175.509827  677.984619  165.10289  717.178345 0  Fgluon
+  175.138901  694.864624  moveto
+(     )   show
+  203.23732  677.152039  175.509827  677.984619  Ffermion
+  189.523636  678.566101  moveto
+(c    )   show
+  160.  599.5  moveto
+(graph    1)   show
+  85.  737.  moveto
+ (1)   show
+  85. 610  moveto
+ (2)   show
+  250.  637.  moveto
+(  3) show
+  250.  712.  moveto
+(  4) show
+  250.  612.  moveto
+(  5) show
+  250.  687.  moveto
+(  6) show
+  250.  737.  moveto
+(  7) show
+  250.  662.  moveto
+(  8) show
+  395.946503  725.665955  325.  737.  Ffermion
+  361.262024  732.270386  moveto
+(u    )   show
+  387.990387  637.228638  325.  612.  Ffermion
+  358.354218  615.972778  moveto
+(s    )   show
+  475.  637.  425.823059  628.632385  Ffermion
+  451.250244  623.887024  moveto
+(e    )   show
+  434.382721  673.351135  475.  687.  Ffermion
+  456.284027  671.436035  moveto
+(mu   )   show
+  425.823059  628.632385  475.  612.  Ffermion
+  452.013458  621.052612  moveto
+(ve   )   show
+  475.  662.  434.382721  673.351135  Ffermion
+  456.037109  668.491028  moveto
+(vm   )   show
+  475.  737.  395.946503  725.665955  Ffermion
+  436.182861  722.383606  moveto
+(u    )   show
+  475.  712.  418.031555  702.906494  Ffermion
+  447.303925  698.515747  moveto
+(s    )   show
+  413.468201  671.162109  387.990387  637.228638  Ffermion
+  404.727722  647.193298  moveto
+(c    )   show
+  425.823059  628.632385  387.990387  637.228638 0  Fphotond
+  408.014587  633.806213  moveto
+(W    )   show
+  413.468201  671.162109  434.382721  673.351135 0  Fphotond
+  424.445953  663.283813  moveto
+(W    )   show
+  418.031555  702.906494  395.946503  725.665955 0  Fgluon
+  410.577332  713.768188  moveto
+(     )   show
+  418.031555  702.906494  413.468201  671.162109  Ffermion
+  420.699005  682.322876  moveto
+(s    )   show
+  385.  599.5  moveto
+(graph    2)   show
+  310.  737.  moveto
+ (1)   show
+  310. 610  moveto
+ (2)   show
+  475.  637.  moveto
+(  3) show
+  475.  687.  moveto
+(  4) show
+  475.  612.  moveto
+(  5) show
+  475.  662.  moveto
+(  6) show
+  475.  737.  moveto
+(  7) show
+  475.  712.  moveto
+(  8) show
+  162.990402  524.771362  100.  550.  Ffermion
+  133.354218  538.027222  moveto
+(u    )   show
+  170.946503  436.334015  100.  425.  Ffermion
+  136.262024  421.729614  moveto
+(s    )   show
+  250.  500.  209.382721  488.648834  Ffermion
+  231.037125  485.508942  moveto
+(e    )   show
+  200.823044  533.367615  250.  525.  Ffermion
+  226.250229  530.112976  moveto
+(mu   )   show
+  209.382721  488.648834  250.  475.  Ffermion
+  231.284027  482.563965  moveto
+(ve   )   show
+  250.  550.  200.823044  533.367615  Ffermion
+  227.013458  532.947388  moveto
+(vm   )   show
+  250.  450.  193.03154  459.093506  Ffermion
+  222.303909  455.484253  moveto
+(u    )   show
+  250.  425.  170.946503  436.334015  Ffermion
+  211.182846  431.616394  moveto
+(s    )   show
+  188.468216  490.837891  162.990402  524.771362  Ffermion
+  179.727737  506.806702  moveto
+(d    )   show
+  209.382721  488.648834  188.468216  490.837891 0  Fphotond
+  199.445953  490.716187  moveto
+(W    )   show
+  162.990402  524.771362  200.823044  533.367615 0  Fphotond
+  183.014572  520.193787  moveto
+(W    )   show
+  193.03154  459.093506  188.468216  490.837891  Ffermion
+  195.699005  471.677155  moveto
+(u    )   show
+  193.03154  459.093506  170.946503  436.334015 0  Fgluon
+  185.577316  440.231781  moveto
+(     )   show
+  160.  412.5  moveto
+(graph    3)   show
+  85.  550.  moveto
+ (1)   show
+  85. 423  moveto
+ (2)   show
+  250.  500.  moveto
+(  3) show
+  250.  525.  moveto
+(  4) show
+  250.  475.  moveto
+(  5) show
+  250.  550.  moveto
+(  6) show
+  250.  450.  moveto
+(  7) show
+  250.  425.  moveto
+(  8) show
+  383.148651  522.091614  325.  550.  Ffermion
+  356.237793  536.553528  moveto
+(u    )   show
+  389.828522  444.707367  325.  425.  Ffermion
+  358.8685  426.069855  moveto
+(s    )   show
+  475.  475.  439.046631  469.987427  Ffermion
+  457.713745  463.541595  moveto
+(e    )   show
+  424.277557  532.402344  475.  525.  Ffermion
+  450.360809  529.648743  moveto
+(mu   )   show
+  439.046631  469.987427  475.  450.  Ffermion
+  459.452759  460.3638  moveto
+(ve   )   show
+  475.  550.  424.277557  532.402344  Ffermion
+  451.277649  532.477417  moveto
+(vm   )   show
+  475.  500.  427.844086  484.703186  Ffermion
+  452.964844  483.595581  moveto
+(u    )   show
+  475.  425.  389.828522  444.707367  Ffermion
+  433.541412  435.724976  moveto
+(s    )   show
+  400.168427  483.872498  383.148651  522.091614  Ffermion
+  396.226105  501.016083  moveto
+(d    )   show
+  439.046631  469.987427  427.844086  484.703186 0  Fphotond
+  437.423737  476.373901  moveto
+(W    )   show
+  383.148651  522.091614  424.277557  532.402344 0  Fphotond
+  404.928955  518.397034  moveto
+(W    )   show
+  427.844086  484.703186  400.168427  483.872498  Ffermion
+  414.15625  475.2901  moveto
+(d    )   show
+  400.168427  483.872498  389.828522  444.707367 0  Fgluon
+  399.832825  459.013611  moveto
+(     )   show
+  385.  412.5  moveto
+(graph    4)   show
+  310.  550.  moveto
+ (1)   show
+  310. 423  moveto
+ (2)   show
+  475.  475.  moveto
+(  3) show
+  475.  525.  moveto
+(  4) show
+  475.  450.  moveto
+(  5) show
+  475.  550.  moveto
+(  6) show
+  475.  500.  moveto
+(  7) show
+  475.  425.  moveto
+(  8) show
+  156.899857  339.663483  100.  362.  Ffermion
+  130.276993  351.485962  moveto
+(u    )   show
+  150.150894  294.590302  100.  237.  Ffermion
+  128.84613  258.511566  moveto
+(s    )   show
+  250.  312.  216.652954  296.110657  Ffermion
+  235.477219  295.541534  moveto
+(e    )   show
+  216.652954  262.777313  250.  262.  Ffermion
+  233.442993  263.387299  moveto
+(mu   )   show
+  216.652954  296.110657  250.  287.  Ffermion
+  234.644226  292.378571  moveto
+(ve   )   show
+  250.  237.  216.652954  262.777313  Ffermion
+  236.384399  249.844559  moveto
+(vm   )   show
+  250.  362.  156.899857  339.663483  Ffermion
+  204.616425  341.969727  moveto
+(u    )   show
+  250.  337.  193.034607  306.751831  Ffermion
+  223.862198  313.459869  moveto
+(s    )   show
+  193.034607  306.751831  208.952911  288.665131 0  Fphoton
+  204.747116  297.011841  moveto
+(A    )   show
+  216.652954  296.110657  208.952911  288.665131 0  Fphotond
+  216.278564  284.793457  moveto
+(W    )   show
+  208.952911  288.665131  216.652954  262.777313 0  Fphotond
+  217.595428  273.146698  moveto
+(W    )   show
+  150.150894  294.590302  156.899857  339.663483 0  Fgluon
+  158.470245  312.386475  moveto
+(     )   show
+  193.034607  306.751831  150.150894  294.590302  Ffermion
+  172.956924  291.860748  moveto
+(s    )   show
+  160.  224.5  moveto
+(graph    5)   show
+  85.  362.  moveto
+ (1)   show
+  85. 235  moveto
+ (2)   show
+  250.  312.  moveto
+(  3) show
+  250.  262.  moveto
+(  4) show
+  250.  287.  moveto
+(  5) show
+  250.  237.  moveto
+(  6) show
+  250.  362.  moveto
+(  7) show
+  250.  337.  moveto
+(  8) show
+  381.899872  339.663483  325.  362.  Ffermion
+  355.276978  351.485962  moveto
+(u    )   show
+  375.150879  294.590302  325.  237.  Ffermion
+  353.84613  258.511566  moveto
+(s    )   show
+  475.  312.  441.652954  296.110657  Ffermion
+  460.477234  295.541534  moveto
+(e    )   show
+  441.652954  262.777313  475.  262.  Ffermion
+  458.442993  263.387299  moveto
+(mu   )   show
+  441.652954  296.110657  475.  287.  Ffermion
+  459.644226  292.378571  moveto
+(ve   )   show
+  475.  237.  441.652954  262.777313  Ffermion
+  461.384399  249.844559  moveto
+(vm   )   show
+  475.  362.  381.899872  339.663483  Ffermion
+  429.616425  341.969727  moveto
+(u    )   show
+  475.  337.  418.034607  306.751831  Ffermion
+  448.862183  313.459869  moveto
+(s    )   show
+  418.034607  306.751831  433.952911  288.665131 0  Fphoton
+  429.747131  297.011841  moveto
+(Z    )   show
+  441.652954  296.110657  433.952911  288.665131 0  Fphotond
+  441.278564  284.793457  moveto
+(W    )   show
+  433.952911  288.665131  441.652954  262.777313 0  Fphotond
+  442.595428  273.146698  moveto
+(W    )   show
+  375.150879  294.590302  381.899872  339.663483 0  Fgluon
+  383.470245  312.386475  moveto
+(     )   show
+  418.034607  306.751831  375.150879  294.590302  Ffermion
+  397.956909  291.860748  moveto
+(s    )   show
+  385.  224.5  moveto
+(graph    6)   show
+  310.  362.  moveto
+ (1)   show
+  310. 235  moveto
+ (2)   show
+  475.  312.  moveto
+(  3) show
+  475.  262.  moveto
+(  4) show
+  475.  287.  moveto
+(  5) show
+  475.  237.  moveto
+(  6) show
+  475.  362.  moveto
+(  7) show
+  475.  337.  moveto
+(  8) show
+  155.802475  148.816864  100.  175.  Ffermion
+  130.025116  162.434921  moveto
+(u    )   show
+  147.983536  96.7592621  100.  50.  Ffermion
+  127.481323  65.7987061  moveto
+(s    )   show
+  250.  75.  209.382721  72.1536331  Ffermion
+  230.040894  64.5890503  moveto
+(e    )   show
+  215.967087  126.989021  250.  150.  Ffermion
+  235.784149  130.352463  moveto
+(mu   )   show
+  209.382721  72.1536331  250.  50.  Ffermion
+  232.08551  61.4663506  moveto
+(ve   )   show
+  250.  125.  215.967087  126.989021  Ffermion
+  233.275269  126.985992  moveto
+(vm   )   show
+  250.  175.  155.802475  148.816864  Ffermion
+  204.240265  153.091064  moveto
+(u    )   show
+  250.  100.  208.038406  106.149979  Ffermion
+  229.744263  104.022141  moveto
+(s    )   show
+  188.468216  91.6876221  147.983536  96.7592621  Ffermion
+  168.847382  95.1846619  moveto
+(s    )   show
+  209.382721  72.1536331  188.468216  91.6876221 0  Fphotond
+  202.338348  81.5746994  moveto
+(W    )   show
+  208.038406  106.149979  215.967087  126.989021 0  Fphotond
+  216.675934  110.791481  moveto
+(W    )   show
+  147.983536  96.7592621  155.802475  148.816864 0  Fgluon
+  156.83754  118.045403  moveto
+(     )   show
+  208.038406  106.149979  188.468216  91.6876221  Ffermion
+  201.22493  90.8976669  moveto
+(c    )   show
+  160.  37.5  moveto
+(graph    7)   show
+  85.  175.  moveto
+ (1)   show
+  85. 48  moveto
+ (2)   show
+  250.  75.  moveto
+(  3) show
+  250.  150.  moveto
+(  4) show
+  250.  50.  moveto
+(  5) show
+  250.  125.  moveto
+(  6) show
+  250.  175.  moveto
+(  7) show
+  250.  100.  moveto
+(  8) show
+  392.056854  161.280029  325.  175.  Ffermion
+  359.53067  169.038528  moveto
+(u    )   show
+  383.310883  90.959343  325.  50.  Ffermion
+  357.029419  62.3881912  moveto
+(s    )   show
+  475.  125.  436.086395  104.615799  Ffermion
+  457.863312  106.378784  moveto
+(e    )   show
+  436.086395  71.2824631  475.  75.  Ffermion
+  456.018707  64.1638947  moveto
+(mu   )   show
+  436.086395  104.615799  475.  100.  Ffermion
+  456.132141  103.273094  moveto
+(ve   )   show
+  475.  50.  436.086395  71.2824631  Ffermion
+  457.942383  61.0280113  moveto
+(vm   )   show
+  475.  175.  392.056854  161.280029  Ffermion
+  434.344421  159.207047  moveto
+(u    )   show
+  475.  150.  406.673523  134.03064  Ffermion
+  441.974701  133.14653  moveto
+(s    )   show
+  418.494568  88.9525375  383.310883  90.959343 0  Fphoton
+  401.187439  90.9478302  moveto
+(A    )   show
+  436.086395  104.615799  418.494568  88.9525375 0  Fphotond
+  430.615387  89.0498734  moveto
+(W    )   show
+  418.494568  88.9525375  436.086395  71.2824631 0  Fphotond
+  430.833862  79.6451797  moveto
+(W    )   show
+  406.673523  134.03064  392.056854  161.280029 0  Fgluon
+  403.771332  146.018799  moveto
+(     )   show
+  406.673523  134.03064  383.310883  90.959343  Ffermion
+  399.387268  106.111023  moveto
+(s    )   show
+  385.  37.5  moveto
+(graph    8)   show
+  310.  175.  moveto
+ (1)   show
+  310. 48  moveto
+ (2)   show
+  475.  125.  moveto
+(  3) show
+  475.  75.  moveto
+(  4) show
+  475.  100.  moveto
+(  5) show
+  475.  50.  moveto
+(  6) show
+  475.  175.  moveto
+(  7) show
+  475.  150.  moveto
+(  8) show
+showpage
+%%Page:       2       2
+%%PageBoundingBox:-20 -20 600 800
+%%PageFonts: Helvetica
+/Helvetica findfont 10 scalefont setfont
+ 240 770 moveto
+(Diagrams by MadGraph) show
+ 370 770 moveto
+( u~ s~ -> e+ mu- ve vm~ u~ s~  ) show
+  167.056854  723.280029  100.  737.  Ffermion
+  134.53067  731.038513  moveto
+(u    )   show
+  158.310898  652.959351  100.  612.  Ffermion
+  132.029434  624.388184  moveto
+(s    )   show
+  250.  687.  211.086395  666.615784  Ffermion
+  232.863312  668.378784  moveto
+(e    )   show
+  211.086395  633.282471  250.  637.  Ffermion
+  231.018692  626.163879  moveto
+(mu   )   show
+  211.086395  666.615784  250.  662.  Ffermion
+  231.132156  665.273071  moveto
+(ve   )   show
+  250.  612.  211.086395  633.282471  Ffermion
+  232.942398  623.028015  moveto
+(vm   )   show
+  250.  737.  167.056854  723.280029  Ffermion
+  209.344406  721.207031  moveto
+(u    )   show
+  250.  712.  181.673523  696.03064  Ffermion
+  216.974701  695.146545  moveto
+(s    )   show
+  193.494568  650.952515  158.310898  652.959351 0  Fphoton
+  176.187469  652.947815  moveto
+(Z    )   show
+  211.086395  666.615784  193.494568  650.952515 0  Fphotond
+  205.615387  651.049866  moveto
+(W    )   show
+  193.494568  650.952515  211.086395  633.282471 0  Fphotond
+  205.833847  641.645203  moveto
+(W    )   show
+  181.673523  696.03064  167.056854  723.280029 0  Fgluon
+  178.771317  708.018799  moveto
+(     )   show
+  181.673523  696.03064  158.310898  652.959351  Ffermion
+  174.387283  668.111023  moveto
+(s    )   show
+  160.  599.5  moveto
+(graph    9)   show
+  85.  737.  moveto
+ (1)   show
+  85. 610  moveto
+ (2)   show
+  250.  687.  moveto
+(  3) show
+  250.  637.  moveto
+(  4) show
+  250.  662.  moveto
+(  5) show
+  250.  612.  moveto
+(  6) show
+  250.  737.  moveto
+(  7) show
+  250.  712.  moveto
+(  8) show
+  383.30072  696.161316  325.  737.  Ffermion
+  357.019012  716.675903  moveto
+(u    )   show
+  392.087341  625.827942  325.  612.  Ffermion
+  359.55304  610.016907  moveto
+(s    )   show
+  475.  737.  435.861145  715.992004  Ffermion
+  457.795258  718.090515  moveto
+(e    )   show
+  435.861145  682.658691  475.  687.  Ffermion
+  455.981781  675.859802  moveto
+(mu   )   show
+  435.861145  715.992004  475.  712.  Ffermion
+  455.937927  714.970215  moveto
+(ve   )   show
+  475.  662.  435.861145  682.658691  Ffermion
+  457.764557  672.75116  moveto
+(vm   )   show
+  475.  637.  406.678589  653.104858  Ffermion
+  441.98645  645.919067  moveto
+(u    )   show
+  475.  612.  392.087341  625.827942  Ffermion
+  434.366211  619.845825  moveto
+(s    )   show
+  383.30072  696.161316  418.223602  698.379089 0  Fphoton
+  401.079041  688.280273  moveto
+(A    )   show
+  435.861145  715.992004  418.223602  698.379089 0  Fphotond
+  430.575439  699.647522  moveto
+(W    )   show
+  418.223602  698.379089  435.861145  682.658691 0  Fphotond
+  430.369232  690.251465  moveto
+(W    )   show
+  406.678589  653.104858  383.30072  696.161316  Ffermion
+  399.383728  673.018921  moveto
+(u    )   show
+  406.678589  653.104858  392.087341  625.827942 0  Fgluon
+  403.791809  633.107971  moveto
+(     )   show
+  385.  599.5  moveto
+(graph   10)   show
+  310.  737.  moveto
+ (1)   show
+  310. 610  moveto
+ (2)   show
+  475.  737.  moveto
+(  3) show
+  475.  687.  moveto
+(  4) show
+  475.  712.  moveto
+(  5) show
+  475.  662.  moveto
+(  6) show
+  475.  637.  moveto
+(  7) show
+  475.  612.  moveto
+(  8) show
+  158.300735  509.161316  100.  550.  Ffermion
+  132.019012  529.675903  moveto
+(u    )   show
+  167.087326  438.827911  100.  425.  Ffermion
+  134.55304  423.016907  moveto
+(s    )   show
+  250.  550.  210.861145  528.992004  Ffermion
+  232.795242  531.090515  moveto
+(e    )   show
+  210.861145  495.658691  250.  500.  Ffermion
+  230.981796  488.859833  moveto
+(mu   )   show
+  210.861145  528.992004  250.  525.  Ffermion
+  230.937927  527.970215  moveto
+(ve   )   show
+  250.  475.  210.861145  495.658691  Ffermion
+  232.764542  485.75116  moveto
+(vm   )   show
+  250.  450.  181.678604  466.104858  Ffermion
+  216.986465  458.919037  moveto
+(u    )   show
+  250.  425.  167.087326  438.827911  Ffermion
+  209.36618  432.845825  moveto
+(s    )   show
+  158.300735  509.161316  193.223587  511.37912 0  Fphoton
+  176.079056  501.280273  moveto
+(Z    )   show
+  210.861145  528.992004  193.223587  511.37912 0  Fphotond
+  205.575424  512.647583  moveto
+(W    )   show
+  193.223587  511.37912  210.861145  495.658691 0  Fphotond
+  205.369217  503.251465  moveto
+(W    )   show
+  181.678604  466.104858  158.300735  509.161316  Ffermion
+  174.383743  486.01889  moveto
+(u    )   show
+  181.678604  466.104858  167.087326  438.827911 0  Fgluon
+  178.791809  446.107971  moveto
+(     )   show
+  160.  412.5  moveto
+(graph   11)   show
+  85.  550.  moveto
+ (1)   show
+  85. 423  moveto
+ (2)   show
+  250.  550.  moveto
+(  3) show
+  250.  500.  moveto
+(  4) show
+  250.  525.  moveto
+(  5) show
+  250.  475.  moveto
+(  6) show
+  250.  450.  moveto
+(  7) show
+  250.  425.  moveto
+(  8) show
+  375.150879  492.409698  325.  550.  Ffermion
+  353.84613  520.488464  moveto
+(u    )   show
+  381.899872  447.336548  325.  425.  Ffermion
+  355.277008  427.514038  moveto
+(s    )   show
+  475.  550.  441.652954  524.222656  Ffermion
+  461.384399  529.155457  moveto
+(e    )   show
+  441.652954  490.889343  475.  500.  Ffermion
+  459.644226  486.621429  moveto
+(mu   )   show
+  441.652954  524.222656  475.  525.  Ffermion
+  458.442993  515.612671  moveto
+(ve   )   show
+  475.  475.  441.652954  490.889343  Ffermion
+  460.477234  483.458466  moveto
+(vm   )   show
+  475.  450.  418.034607  480.248169  Ffermion
+  448.862183  465.540131  moveto
+(u    )   show
+  475.  425.  381.899872  447.336548  Ffermion
+  429.616425  437.030304  moveto
+(s    )   show
+  418.034607  480.248169  433.952911  498.334869 0  Fphoton
+  429.747131  481.988159  moveto
+(A    )   show
+  441.652954  524.222656  433.952911  498.334869 0  Fphotond
+  442.595428  505.853271  moveto
+(W    )   show
+  433.952911  498.334869  441.652954  490.889343 0  Fphotond
+  441.278564  494.206543  moveto
+(W    )   show
+  418.034607  480.248169  375.150879  492.409698  Ffermion
+  397.956909  487.139252  moveto
+(u    )   show
+  375.150879  492.409698  381.899872  447.336548 0  Fgluon
+  383.470245  466.613525  moveto
+(     )   show
+  385.  412.5  moveto
+(graph   12)   show
+  310.  550.  moveto
+ (1)   show
+  310. 423  moveto
+ (2)   show
+  475.  550.  moveto
+(  3) show
+  475.  500.  moveto
+(  4) show
+  475.  525.  moveto
+(  5) show
+  475.  475.  moveto
+(  6) show
+  475.  450.  moveto
+(  7) show
+  475.  425.  moveto
+(  8) show
+  150.150894  304.409698  100.  362.  Ffermion
+  128.84613  332.488434  moveto
+(u    )   show
+  156.899857  259.336548  100.  237.  Ffermion
+  130.276993  239.514038  moveto
+(s    )   show
+  250.  362.  216.652954  336.222687  Ffermion
+  236.384399  341.155457  moveto
+(e    )   show
+  216.652954  302.889343  250.  312.  Ffermion
+  234.644226  298.621429  moveto
+(mu   )   show
+  216.652954  336.222687  250.  337.  Ffermion
+  233.442993  327.612701  moveto
+(ve   )   show
+  250.  287.  216.652954  302.889343  Ffermion
+  235.477219  295.458466  moveto
+(vm   )   show
+  250.  262.  193.034607  292.248169  Ffermion
+  223.862198  277.540131  moveto
+(u    )   show
+  250.  237.  156.899857  259.336548  Ffermion
+  204.616425  249.030304  moveto
+(s    )   show
+  193.034607  292.248169  208.952911  310.334869 0  Fphoton
+  204.747116  293.988159  moveto
+(Z    )   show
+  216.652954  336.222687  208.952911  310.334869 0  Fphotond
+  217.595428  317.853302  moveto
+(W    )   show
+  208.952911  310.334869  216.652954  302.889343 0  Fphotond
+  216.278564  306.206543  moveto
+(W    )   show
+  193.034607  292.248169  150.150894  304.409698  Ffermion
+  172.956924  299.139252  moveto
+(u    )   show
+  150.150894  304.409698  156.899857  259.336548 0  Fgluon
+  158.470245  278.613525  moveto
+(     )   show
+  160.  224.5  moveto
+(graph   13)   show
+  85.  362.  moveto
+ (1)   show
+  85. 235  moveto
+ (2)   show
+  250.  362.  moveto
+(  3) show
+  250.  312.  moveto
+(  4) show
+  250.  337.  moveto
+(  5) show
+  250.  287.  moveto
+(  6) show
+  250.  262.  moveto
+(  7) show
+  250.  237.  moveto
+(  8) show
+  372.983551  315.240753  325.  362.  Ffermion
+  352.481323  338.201294  moveto
+(u    )   show
+  380.80246  263.183136  325.  237.  Ffermion
+  355.025116  241.565079  moveto
+(s    )   show
+  475.  287.  440.967072  285.010986  Ffermion
+  458.275269  277.014008  moveto
+(e    )   show
+  434.382721  339.846375  475.  337.  Ffermion
+  455.040894  339.41095  moveto
+(mu   )   show
+  440.967072  285.010986  475.  262.  Ffermion
+  460.784149  273.647552  moveto
+(ve   )   show
+  475.  362.  434.382721  339.846375  Ffermion
+  457.08551  342.533661  moveto
+(vm   )   show
+  475.  312.  433.038391  305.850037  Ffermion
+  454.744263  299.977875  moveto
+(u    )   show
+  475.  237.  380.80246  263.183136  Ffermion
+  429.240265  250.908936  moveto
+(s    )   show
+  413.468201  320.312378  372.983551  315.240753  Ffermion
+  393.847382  308.815338  moveto
+(u    )   show
+  440.967072  285.010986  433.038391  305.850037 0  Fphotond
+  441.675903  293.208527  moveto
+(W    )   show
+  413.468201  320.312378  434.382721  339.846375 0  Fphotond
+  427.338348  322.425293  moveto
+(W    )   show
+  433.038391  305.850037  413.468201  320.312378  Ffermion
+  426.224915  313.102356  moveto
+(d    )   show
+  372.983551  315.240753  380.80246  263.183136 0  Fgluon
+  381.837555  285.95459  moveto
+(     )   show
+  385.  224.5  moveto
+(graph   14)   show
+  310.  362.  moveto
+ (1)   show
+  310. 235  moveto
+ (2)   show
+  475.  287.  moveto
+(  3) show
+  475.  337.  moveto
+(  4) show
+  475.  262.  moveto
+(  5) show
+  475.  362.  moveto
+(  6) show
+  475.  312.  moveto
+(  7) show
+  475.  237.  moveto
+(  8) show
+showpage
+%%trailer

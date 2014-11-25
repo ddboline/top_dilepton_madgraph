@@ -1,0 +1,5 @@
+smatrix_gdx_epemdxg_( q_new , ans_new );
+ if( d_params->debug_flag ) cout << " answer smatrix_gdx_epemdxg_ " << ans_new[0] << endl;
+
+result += ans_new[0] * d_pdfs->fx1[21] * d_pdfs->fx2[-1] / ( q1 * q2 );
+result += ans_new[0] * d_pdfs->fx1[21] * d_pdfs->fx2[-3] / ( q1 * q2 );

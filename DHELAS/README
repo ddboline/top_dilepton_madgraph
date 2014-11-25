@@ -1,0 +1,14 @@
+# ----------------------------------------------------------------------------
+#
+# DHELAS 3.0 library
+# Feb. 28, 2001
+#
+# ----------------------------------------------------------------------------
+# 1 Jul 2003 : Fabio Maltoni
+#
+# "Fixed-width scheme" implemented.
+#
+# coupsm-ORIGINAL.F and coupl-ORIGINAL.inc 
+# are not to be included when HELAS is used with 
+# the 2003 version of MadEvent. 
+# ----------------------------------------------------------------------------

@@ -1,0 +1,4 @@
+smatrix_usx_epmumvevmxusx_( q_new , ans_new );
+ if( d_params->debug_flag ) cout << " answer smatrix_usx_epmumvevmxusx_ " << ans_new[0] << endl;
+
+result += ans_new[0] * d_pdfs->fx1[2] * d_pdfs->fx2[-3] / ( q1 * q2 );

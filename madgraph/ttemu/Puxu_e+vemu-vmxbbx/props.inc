@@ -1,0 +1,15 @@
+      pmass( -1,   1) = WMASS   
+      pwidth( -1,   1) = WWIDTH  
+      pow( -1,   1) = 2
+      pmass( -2,   1) = WMASS   
+      pwidth( -2,   1) = WWIDTH  
+      pow( -2,   1) = 2
+      pmass( -3,   1) = TMASS   
+      pwidth( -3,   1) = TWIDTH  
+      pow( -3,   1) = 1
+      pmass( -4,   1) = TMASS   
+      pwidth( -4,   1) = TWIDTH  
+      pow( -4,   1) = 1
+      pmass( -5,   1) = ZERO    
+      pwidth( -5,   1) = ZERO    
+      pow( -5,   1) = 2
